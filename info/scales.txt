@@ -1,0 +1,57 @@
+                    |C D EF G A B|
+                    |1 2 34 5 6 7|
+                    |123456789ABC|
+Chromatic           |************|  HHHHHHHHHHHH
+Major               |* * ** * * *|  WWHWWWH
+Natural Minor       |* ** * ** * |  WHWWHWW
+Harmonic Minor      |* ** * **  *|  WHWWH3W
+Melodic Minor       |* ** * * * *|  WHWWWWH
+Major Blues         |* ***  * *  |  WHH3W3
+Minor Blues         |*  * ***  * |  3WHH3W
+Major Pentatonic    |* * *  * *  |  WW3W3
+Minor Pentatonic    |*  * * *  * |  3WW3W
+                    |C D EF G A B|
+Ionian              |* * ** * * *|  WWHWWWH
+Dorian              |* ** * * ** |  WHWWWHW
+Phrygian            |** * * ** * |  HWWWHWW
+Lydian              |* * * ** * *|  WWWHWWH
+Mixolydian          |* * ** * ** |  WWHWWHW
+Aeolian             |* ** * ** * |  WHWWHWW
+Locrian             |** * ** * * |  HWWHWWW
+                    |C D EF G A B|
+Altered Pentatonic  |**   * * *  |  H4WW3
+Altered Ionian #5   |* * **  ** *|  WWH3HWH
+Altered Dorian b2   |** * * * ** |  HWWWWHW
+Altered Dorian b5   |* ** **  ** |  WHWH3HW
+Altered Phrygian b4 |**  ** * ** |  H3HWWHW
+Altered Lydian #2   |*  ** ** * *|  3HWHWWH
+Altered Lydian #5   |* * * * ** *|  WWWWHWH
+Altered Lydian b7   |* * * ** ** |  WWWHWHW
+Altered Aeolian b1  |* * ** **  *|  WWHWH3H
+Altered Locrian     |** ** * * * |  HWHWWWW
+                    |C D EF G A B|
+Major Bebop         |* * ** *** *|  WWHWHHWH
+Minor Bebop         |* **** * ** |  WHHHWWHW
+Nine Tone           |* *** **** *|  WHHWHHHWH
+Algerian            |* ** ****  *|  WHWHHH3H
+Arabic              |* * *** * * |  WWHHWWW
+Augmented           |*  **  **  *|  3H3H3H
+Balinese            |** *   **   |  HW4H4
+Chinese             |*   * **   *|  4WH4H
+Diminished          |* ** ** ** *|  WHWHWHWH
+Dominant Diminished |** ** ** ** |  HWHWHWHW
+Egyptian            |* *  * *  * |  W3W3W
+Eight Tone Spanish  |** **** * * |  HWHHHWWW
+Enigmatic           |**  * * * **|  H3WWWHH
+Hindu               |* * ** ** * |  WWHWHWW
+Hirajoshi           |**   **   * |  H4H4W
+Hungarian           |* **  ***  *|  WH3HH3H
+Japanese            |**   * *  * |  H4W3W
+Neapolitan          |** * * **  *|  HWWWH3H
+Oriental            |**  ***  ** |  H3HH3HW
+Prometheus          |* * * *  ** |  WWW3HW
+Whole Tone          |* * * * * * |  WWWWWW
+Romanian Minor      |* **  ** ** |  WH3HWHW
+Spanish Gypsy       |**  ** ** * |  H3HWHWW
+Turkish             |**  ** **  *|  H3HWH3H
+Yo                  |* *  * * *  |  W3WW3

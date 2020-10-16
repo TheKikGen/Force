@@ -1,0 +1,52 @@
+#!/bin/sh
+
+# find dfu util info
+DFUUTILINFO=$(dfu-util -l | grep "0x08000000")
+
+#if in dfu-update mode run firmware update script
+[ "x$DFUUTILINFO" != "x" ] && sh /usr/share/Akai/SME0/Firmware/update.sh
+
+if type systemd-inhibit >/dev/null 2>&1
+then
+    exec systemd-inhibit --what=handle-power-key /usr/bin/MPC "$@"
+else
+    dev=`amidi -l | grep Private | cut -b5-13`
+    amidi -p $dev -S 'f0 47 00 40 62 00 01 02 f7'
+    amidi -p $dev -S 'f0 47 00 40 65 00 04 00 00 20 20 f7'
+
+    sync ; sync
+    cat /usr/share/Mockba/fb.raw > /dev/fb0
+    amidi -p $dev -S 'f0 47 00 40 65 00 04 01 00 20 20 f7'
+
+    systemctl enable sshd
+    amidi -p $dev -S 'f0 47 00 40 65 00 04 02 00 20 20 f7'
+
+    systemctl restart sshd
+    amidi -p $dev -S 'f0 47 00 40 65 00 04 03 00 20 20 f7'
+
+    oarp="/usr/share/Akai/SME0/Arp Patterns Orig"
+    farp="/media/az01-internal-sd/Force Documents/Arp Patterns"
+    [ -d "$farp" ] || mkdir "$farp"; cp -a "$oarp"/* "$farp"
+    amidi -p $dev -S 'f0 47 00 40 65 00 04 04 00 20 20 f7'
+
+    f="/media/az01-internal-sd/runonce.sh"
+    [ -f "$f" ] && "$f"
+    rm -f "$f"
+    amidi -p $dev -S 'f0 47 00 40 65 00 04 05 00 20 20 f7'
+
+    f="/media/az01-internal-sd/autoexec.sh"
+    [ -f "$f" ] && "$f"
+    amidi -p $dev -S 'f0 47 00 40 65 00 04 06 00 20 20 f7'
+
+    sleep .5
+    amidi -p $dev -S 'f0 47 00 40 65 00 04 07 00 20 20 f7'
+
+    /usr/share/Mockba/install.sh
+
+    # Reduce the soft stack size limit to 1MiB (from the default 8MiB).  This
+    # is used as the default stack size for new threads and since MPC is
+    # locked in memory this memory is allocated.  Since the limit is read
+    # before main, we cannot set it in the application and must do so here.
+    ulimit -S -s 1024
+    exec /usr/bin/MPC "$@"
+fi

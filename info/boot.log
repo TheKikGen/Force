@@ -1,0 +1,759 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2020.10.15 14:15:32 =~=~=~=~=~=~=~=~=~=~=~=
+
+U-Boot SPL 2016.05-inmusic-20180928 (Nov 20 2017 - 15:18:40)
+Trying to boot from MMC1
+
+
+U-Boot 2016.05-inmusic-20180928 (Nov 20 2017 - 15:18:40 +0000), Build: jenkins-SME1-release-29
+
+Model: Akai Professional Force
+DRAM:  2 GiB
+MMC:   dwmmc@ff0f0000: 0
+In:    gpio-keys
+Out:   serial
+Err:   serial
+AZ01 PCB revD (raw=13)
+Hit any key to stop autoboot:  0 
+switch to partitions #0, OK
+mmc0(part 0) is current device
+Scanning mmc 0:6...
+Found /boot/extlinux/extlinux.conf
+Retrieving file: /boot/extlinux/extlinux.conf
+68 bytes read in 11 ms (5.9 KiB/s)
+1:buildroot
+Retrieving file: /boot/zImage
+4774632 bytes read in 220 ms (20.7 MiB/s)
+Retrieving file: /boot/rk3288-az01-ada2-c.dtb
+48892 bytes read in 12 ms (3.9 MiB/s)
+Kernel image @ 0x2000000 [ 0x000000 - 0x48dae8 ]
+## Flattened Device Tree blob at 01f00000
+   Booting using the fdt blob at 0x1f00000
+   Loading Device Tree to 1fff1000, end 1ffffefb ... OK
+
+Starting kernel ...
+
+Booting Linux on physical CPU 0x500
+Linux version 4.19.125-inmusic-2020-05-29-p2-rt53 (buildroot@buildroot) (gcc version 8.4.0 (Buildroot 2020.02.2-00010-g2a891bcc0b)) #1 SMP PREEMPT RT Fri Sep 18 17:10:59 UTC 2020
+CPU: ARMv7 Processor [410fc0d1] revision 1 (ARMv7), cr=10c5387d
+CPU: div instructions available: patching division code
+CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+OF: fdt: Machine model: Akai Professional Force
+Memory policy: Data cache writealloc
+OF: reserved mem: initialized node framebuffer, compatible id rockchip,framebuffer-memory
+random: get_random_bytes called from start_kernel+0x88/0x40c with crng_init=0
+percpu: Embedded 16 pages/cpu s33824 r8192 d23520 u65536
+Built 1 zonelists, mobility grouping on.  Total pages: 522752
+Kernel command line: root=PARTUUID=24d1deac-3434-1a4e-98d1-68ee2945a5f1 rootwait ro console=ttyS2,115200 rfkill.default_state=0  isolcpus=1-3
+Dentry cache hash table entries: 131072 (order: 8, 1048576 bytes)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Memory: 2055804K/2097152K available (7168K kernel code, 421K rwdata, 1956K rodata, 1024K init, 244K bss, 29060K reserved, 12288K cma-reserved, 1298432K highmem)
+Virtual kernel memory layout:
+    vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+    fixmap  : 0xffc00000 - 0xfff00000   (3072 kB)
+    vmalloc : 0xf0800000 - 0xff800000   ( 240 MB)
+    lowmem  : 0xc0000000 - 0xf0000000   ( 768 MB)
+    pkmap   : 0xbfe00000 - 0xc0000000   (   2 MB)
+    modules : 0xbf000000 - 0xbfe00000   (  14 MB)
+      .text : 0x(ptrval) - 0x(ptrval)   (8160 kB)
+      .init : 0x(ptrval) - 0x(ptrval)   (1024 kB)
+      .data : 0x(ptrval) - 0x(ptrval)   ( 422 kB)
+       .bss : 0x(ptrval) - 0x(ptrval)   ( 245 kB)
+SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+rcu: Preemptible hierarchical RCU implementation.
+rcu: RCU priority boosting: priority 1 delay 500 ms.
+No expedited grace period (rcu_normal_after_boot).
+Tasks RCU enabled.
+NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16
+rockchip: reset MMC AHB arbitor
+arch_timer: cp15 timer(s) running at 24.00MHz (phys).
+clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns
+sched_clock: 56 bits at 24MHz, resolution 41ns, wraps every 4398046511097ns
+Switching to timer-based delay loop, resolution 41ns
+Console: colour dummy device 80x30
+Calibrating delay loop (skipped), value calculated using timer frequency.. 48.00 BogoMIPS (lpj=24000)
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 2048 (order: 1, 8192 bytes)
+Mountpoint-cache hash table entries: 2048 (order: 1, 8192 bytes)
+CPU: Testing write buffer coherency: ok
+CPU0: thread -1, cpu 0, socket 5, mpidr 80000500
+Setting up static identity map for 0x100000 - 0x100060
+rcu: Hierarchical SRCU implementation.
+smp: Bringing up secondary CPUs ...
+CPU1: thread -1, cpu 1, socket 5, mpidr 80000501
+CPU2: thread -1, cpu 2, socket 5, mpidr 80000502
+CPU3: thread -1, cpu 3, socket 5, mpidr 80000503
+smp: Brought up 1 node, 4 CPUs
+SMP: Total of 4 processors activated (192.00 BogoMIPS).
+CPU: All CPU(s) started in SVC mode.
+devtmpfs: initialized
+VFP support v0.3: implementor 41 architecture 3 part 30 variant d rev 0
+clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
+futex hash table entries: 1024 (order: 4, 65536 bytes)
+pinctrl core: initialized pinctrl subsystem
+NET: Registered protocol family 16
+DMA: preallocated 256 KiB pool for atomic coherent allocations
+cpuidle: using governor menu
+No ATAGs?
+hw-breakpoint: found 5 (+1 reserved) breakpoint and 4 watchpoint registers.
+hw-breakpoint: maximum watchpoint size is 4 bytes.
+vcc_mipi: supplied by vcc_sys
+vcc_sata: supplied by vcc_sys
+SCSI subsystem initialized
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+usbcore: registered new device driver usb
+pps_core: LinuxPPS API ver. 1 registered
+pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+PTP clock support registered
+Advanced Linux Sound Architecture Driver Initialized.
+Bluetooth: Core ver 2.22
+NET: Registered protocol family 31
+Bluetooth: HCI device and connection manager initialized
+Bluetooth: HCI socket layer initialized
+Bluetooth: L2CAP socket layer initialized
+Bluetooth: SCO socket layer initialized
+clocksource: Switched to clocksource arch_sys_counter
+NET: Registered protocol family 2
+tcp_listen_portaddr_hash hash table entries: 512 (order: 2, 16384 bytes)
+TCP established hash table entries: 8192 (order: 3, 32768 bytes)
+TCP bind hash table entries: 8192 (order: 5, 229376 bytes)
+TCP: Hash tables configured (established 8192 bind 8192)
+UDP hash table entries: 512 (order: 3, 32768 bytes)
+UDP-Lite hash table entries: 512 (order: 3, 32768 bytes)
+NET: Registered protocol family 1
+hw perfevents: enabled with armv7_cortex_a12 PMU driver, 7 counters available
+Initialise system trusted keyrings
+workingset: timestamp_bits=30 max_order=19 bucket_order=0
+squashfs: version 4.0 (2009/01/31) Phillip Lougher
+fuse init (API version 7.27)
+Key type asymmetric registered
+Asymmetric key parser 'x509' registered
+bounce: pool size: 64 pages
+Block layer SCSI generic (bsg) driver version 0.4 loaded (major 248)
+io scheduler noop registered
+io scheduler deadline registered (default)
+io scheduler mq-deadline registered (default)
+io scheduler kyber registered
+pwm-backlight mipi-backlight: Linked as a consumer to regulator.2
+dma-pl330 ff250000.dma-controller: Loaded driver for PL330 DMAC-241330
+dma-pl330 ff250000.dma-controller: DBUFF-128x8bytes Num_Chans-8 Num_Peri-20 Num_Events-16
+dma-pl330 ffb20000.dma-controller: Loaded driver for PL330 DMAC-241330
+dma-pl330 ffb20000.dma-controller: DBUFF-64x8bytes Num_Chans-5 Num_Peri-6 Num_Events-10
+Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+ff180000.serial: ttyS0 at MMIO 0xff180000 (irq = 37, base_baud = 1500000) is a 16550A
+serial serial0: tty port ttyS0 registered
+ff690000.serial: ttyS2 at MMIO 0xff690000 (irq = 38, base_baud = 1500000) is a 16550A
+console [ttyS2] enabled
+ff1b0000.serial: ttyS3 at MMIO 0xff1b0000 (irq = 39, base_baud = 1500000) is a 16550A
+i2c /dev entries driver
+REG1: supplied by vcc_sys
+REG2: supplied by vcc_sys
+REG3: supplied by vcc_sys
+REG4: supplied by vcc_sys
+REG5: supplied by VCC_IO
+REG6: supplied by VCC_IO
+REG7: supplied by VCC_IO
+REG8: supplied by vcc_sys
+REG9: supplied by vcc_sys
+REG10: supplied by VCC_20
+REG11: supplied by VCC_20
+REG12: supplied by VCC_20
+fan53555-regulator 0-0040: FAN53555 Option[8] Rev[1] Detected!
+fan53555-reg: supplied by vcc_sys
+vcc_flash: supplied by VCC_IO
+vcc_sd: supplied by VCC_IO
+fan53555-regulator 0-0041: FAN53555 Option[8] Rev[1] Detected!
+fan53555-reg: supplied by vcc_sys
+iommu: Adding device ff930000.vop to group 0
+rockchip-vop ff930000.vop: Linked as a consumer to ff930300.iommu
+iommu: Adding device ff940000.vop to group 1
+rockchip-vop ff940000.vop: Linked as a consumer to ff940300.iommu
+rockchip-drm display-subsystem: Linked as a consumer to ff930000.vop
+rockchip-drm display-subsystem: Linked as a consumer to ff940000.vop
+rockchip-drm display-subsystem: Linked as a consumer to ff960000.mipi
+rockchip_framebuffer_rmem_device_init: initializing with base address 0x7f400000 size=0x00c00000
+rockchip-drm display-subsystem: assigned reserved memory node framebuffer
+rockchip-drm display-subsystem: bound ff930000.vop (ops 0xc084dad0)
+rockchip-vop ff940000.vop: enabled by bootloader
+rockchip-drm display-subsystem: bound ff940000.vop (ops 0xc084dad0)
+panel-urt-umo-p076md-t ff960000.mipi.0: Linked as a consumer to regulator.3
+rockchip-drm display-subsystem: bound ff960000.mipi (ops 0xc084f5ac)
+[drm] Supports vblank timestamp caching Rev 2 (21.10.2013).
+[drm] No driver support for vblank timestamp query.
+rockchip-drm display-subsystem: framebugger sg_size=12582912 size=12288000
+rockchip-drm display-subsystem: fb0:  frame buffer device
+random: fast init done
+[drm] Initialized rockchip 1.0.0 20140818 for display-subsystem on minor 0
+mali ffa30000.gpu: Linked as a consumer to regulator.21
+mali ffa30000.gpu: GPU identified as 0x0750 r0p0 status 1
+mali ffa30000.gpu: Protected mode not available
+mali ffa30000.gpu: Using configured power model mali-simple-power-model, and fallback mali-simple-power-model
+Error reading temperature for gpu thermal zone: -22
+Error reading temperature for gpu thermal zone: -22
+Error reading temperature for gpu thermal zone: -22
+Error reading temperature for gpu thermal zone: -22
+Error reading temperature for gpu thermal zone: -22
+Error reading temperature for gpu thermal zone: -22
+mali ffa30000.gpu: Probed as mali0
+brd: module loaded
+loop: module loaded
+libphy: Fixed MDIO Bus: probed
+rk_gmac-dwmac ff290000.ethernet: PTP uses main clock
+rk_gmac-dwmac ff290000.ethernet: Linked as a consumer to regulator.16
+rk_gmac-dwmac ff290000.ethernet: clock input or output? (input).
+rk_gmac-dwmac ff290000.ethernet: TX delay(0x30).
+rk_gmac-dwmac ff290000.ethernet: RX delay(0x10).
+rk_gmac-dwmac ff290000.ethernet: integrated PHY? (no).
+rk_gmac-dwmac ff290000.ethernet: cannot get clock clk_mac_speed
+rk_gmac-dwmac ff290000.ethernet: clock input from PHY
+rk_gmac-dwmac ff290000.ethernet: init for RGMII
+rk_gmac-dwmac ff290000.ethernet: User ID: 0x10, Synopsys ID: 0x35
+rk_gmac-dwmac ff290000.ethernet: DWMAC1000
+rk_gmac-dwmac ff290000.ethernet: DMA HW capability register supported
+rk_gmac-dwmac ff290000.ethernet: RX Checksum Offload Engine supported
+rk_gmac-dwmac ff290000.ethernet: COE Type 2
+rk_gmac-dwmac ff290000.ethernet: TX Checksum insertion supported
+rk_gmac-dwmac ff290000.ethernet: Wake-Up On Lan supported
+rk_gmac-dwmac ff290000.ethernet: Normal descriptors
+rk_gmac-dwmac ff290000.ethernet: Ring mode enabled
+rk_gmac-dwmac ff290000.ethernet: Enable RX Mitigation via HW Watchdog Timer
+libphy: stmmac: probed
+RTL8211E Gigabit Ethernet stmmac-0:00: attached PHY driver [RTL8211E Gigabit Ethernet] (mii_bus:phy_addr=stmmac-0:00, irq=POLL)
+RTL8211E Gigabit Ethernet stmmac-0:01: attached PHY driver [RTL8211E Gigabit Ethernet] (mii_bus:phy_addr=stmmac-0:01, irq=POLL)
+dwc2 ff580000.usb: ff580000.usb supply vusb_d not found, using dummy regulator
+dwc2 ff580000.usb: Linked as a consumer to regulator.0
+dwc2 ff580000.usb: ff580000.usb supply vusb_a not found, using dummy regulator
+dwc2 ff580000.usb: dwc2_check_params: Invalid parameter lpm_clock_gating=1
+dwc2 ff580000.usb: dwc2_check_params: Invalid parameter besl=1
+dwc2 ff580000.usb: dwc2_check_params: Invalid parameter hird_threshold_en=1
+dwc2 ff580000.usb: EPs: 10, dedicated fifos, 972 entries in SPRAM
+dwc2 ff580000.usb: DWC OTG Controller
+dwc2 ff580000.usb: new USB bus registered, assigned bus number 1
+dwc2 ff580000.usb: irq 44, io mem 0xff580000
+usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 4.19
+usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+usb usb1: Product: DWC OTG Controller
+usb usb1: Manufacturer: Linux 4.19.125-inmusic-2020-05-29-p2-rt53 dwc2_hsotg
+usb usb1: SerialNumber: ff580000.usb
+hub 1-0:1.0: USB hub found
+hub 1-0:1.0: 1 port detected
+ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+ehci-platform: EHCI generic platform driver
+ehci-platform ff500000.usb: EHCI Host Controller
+ehci-platform ff500000.usb: new USB bus registered, assigned bus number 2
+ehci-platform ff500000.usb: irq 43, io mem 0xff500000
+ehci-platform ff500000.usb: USB 2.0 started, EHCI 1.00
+usb usb2: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 4.19
+usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+usb usb2: Product: EHCI Host Controller
+usb usb2: Manufacturer: Linux 4.19.125-inmusic-2020-05-29-p2-rt53 ehci_hcd
+usb usb2: SerialNumber: ff500000.usb
+hub 2-0:1.0: USB hub found
+hub 2-0:1.0: 1 port detected
+ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+ohci-platform: OHCI generic platform driver
+usbcore: registered new interface driver uas
+usbcore: registered new interface driver usb-storage
+usbcore: registered new interface driver usbserial_generic
+usbserial: USB Serial support registered for generic
+usbcore: registered new interface driver cp210x
+usbserial: USB Serial support registered for cp210x
+usbcore: registered new interface driver ftdi_sio
+usbserial: USB Serial support registered for FTDI USB Serial Device
+usbcore: registered new interface driver pl2303
+usbserial: USB Serial support registered for pl2303
+usbcore: registered new interface driver usb_serial_simple
+usbserial: USB Serial support registered for carelink
+usbserial: USB Serial support registered for zio
+usbserial: USB Serial support registered for funsoft
+usbserial: USB Serial support registered for flashloader
+usbserial: USB Serial support registered for google
+usbserial: USB Serial support registered for libtransistor
+usbserial: USB Serial support registered for vivopay
+usbserial: USB Serial support registered for moto_modem
+usbserial: USB Serial support registered for motorola_tetra
+usbserial: USB Serial support registered for novatel_gps
+usbserial: USB Serial support registered for hp4x
+usbserial: USB Serial support registered for suunto
+usbserial: USB Serial support registered for siemens_mpi
+usb5537 1-002d: Set state=0x87 on mask 0x8
+usb 2-1: new high-speed USB device number 2 using ehci-platform
+usb 2-1: New USB device found, idVendor=09e8, idProduct=5040, bcdDevice=50.00
+usb 2-1: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+usb 2-1: Product: Force Hub
+usb 2-1: Manufacturer: Akai Professional
+hub 2-1:1.0: USB hub found
+hub 2-1:1.0: 7 ports detected
+usb 2-1.4: new high-speed USB device number 3 using ehci-platform
+usb 2-1.4: New USB device found, idVendor=152d, idProduct=0578, bcdDevice= 1.06
+usb 2-1.4: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+usb 2-1.4: Product: USB to ATA/ATAPI Bridge
+usb 2-1.4: Manufacturer: JMicron
+usb 2-1.4: SerialNumber: 0123456789ABCDEF
+scsi host0: uas
+scsi 0:0:0:0: Direct-Access     JMicron  Generic          0106 PQ: 0 ANSI: 6
+sd 0:0:0:0: [sda] 1000215216 512-byte logical blocks: (512 GB/477 GiB)
+sd 0:0:0:0: [sda] 4096-byte physical blocks
+sd 0:0:0:0: [sda] Write Protect is off
+sd 0:0:0:0: [sda] Disabling FUA
+sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+sd 0:0:0:0: [sda] Optimal transfer size 33553920 bytes not a multiple of physical block size (4096 bytes)
+ sda: sda1
+sd 0:0:0:0: [sda] Attached SCSI disk
+usb 2-1.5: new full-speed USB device number 4 using ehci-platform
+usb 2-1.5: language id specifier not provided by device, defaulting to English
+usb 2-1.5: New USB device found, idVendor=09e8, idProduct=0040, bcdDevice= 0.43
+usb 2-1.5: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+usb 2-1.5: Product: Akai Pro Force
+usb 2-1.5: Manufacturer: Akai Pro
+usb5537 1-002d: Set state=0x82 on mask 0x8
+usb5537 1-002d: Disabled SS ports matching 0x8
+usb5537 1-002d: switched to HUB mode
+usb5537 1-002d: usb5537_probe: probed in hub mode
+usb5537 1-002d: reg 0x3c00 = 0x03
+usb5537 1-002d: reg 0x3c04 = 0x03
+usb5537 1-002d: reg 0x3c08 = 0x03
+usb5537 1-002d: reg 0x3c0c = 0x03
+usb5537 1-002d: reg 0x3c10 = 0x04
+usb5537 1-002d: reg 0x3c14 = 0x03
+usb5537 1-002d: reg 0x3c18 = 0x03
+usb5537 1-002d: reg 0x3c1c = 0x00
+usb5537 1-002d: reg 0x3c20 = 0x01
+usb5537 1-002d: reg 0x3c24 = 0x01
+usb5537 1-002d: reg 0x3c28 = 0x01
+usb5537 1-002d: reg 0x3c2c = 0x01
+usb5537 1-002d: reg 0x3c30 = 0x01
+usb5537 1-002d: reg 0x3c34 = 0x01
+usb5537 1-002d: reg 0x3c38 = 0x01
+ili2116 4-0041: i2c_device_id = c086d81c
+ili2116 4-0041: protocol version 02.03
+ili2116 4-0041: ILI2116 firmware version 0.0.4.0
+ili2116 4-0041: ILI2116 MCU kernel version 8.0.9.0.1
+input: ILI2116 Touchscreen as /devices/platform/ff160000.i2c/i2c-4/4-0041/input/input0
+rtc-hym8563 0-0051: rtc core: registered hym8563 as rtc0
+rockchip-iodomain ff770000.syscon:io-domains: Linked as a consumer to regulator.9
+rockchip-iodomain ff770000.syscon:io-domains: Linked as a consumer to regulator.1
+rockchip-iodomain ff770000.syscon:io-domains: Linked as a consumer to regulator.16
+rockchip-iodomain ff770000.syscon:io-domains: Linked as a consumer to regulator.18
+rockchip-iodomain ff770000.syscon:io-domains: Linked as a consumer to regulator.12
+rockchip-thermal ff280000.tsadc: Missing rockchip,grf property
+cpu cpu0: Linked as a consumer to regulator.20
+cpu cpu0: Dropping the link to regulator.20
+cpu cpu0: Linked as a consumer to regulator.20
+Synopsys Designware Multimedia Card Interface Driver
+dwmmc_rockchip ff0c0000.dwmmc: IDMAC supports 32-bit address mode.
+dwmmc_rockchip ff0c0000.dwmmc: Using internal DMA controller.
+dwmmc_rockchip ff0c0000.dwmmc: Version ID is 270a
+dwmmc_rockchip ff0c0000.dwmmc: DW MMC controller at irq 30,32 bit host data width,256 deep fifo
+dwmmc_rockchip ff0c0000.dwmmc: Linked as a consumer to regulator.5
+dwmmc_rockchip ff0c0000.dwmmc: Linked as a consumer to regulator.12
+mmc_host mmc0: card is polling.
+dwmmc_rockchip ff0c0000.dwmmc: dw_mci_set_ios: bus_width=0 timing=0 clock=0 power_mode=1
+dwmmc_rockchip ff0c0000.dwmmc: dw_mci_switch_voltage: signal_voltage=0
+dwmmc_rockchip ff0d0000.dwmmc: IDMAC supports 32-bit address mode.
+dwmmc_rockchip ff0d0000.dwmmc: Using internal DMA controller.
+dwmmc_rockchip ff0d0000.dwmmc: Version ID is 270a
+dwmmc_rockchip ff0d0000.dwmmc: DW MMC controller at irq 31,32 bit host data width,256 deep fifo
+dwmmc_rockchip ff0d0000.dwmmc: Linked as a consumer to regulator.9
+dwmmc_rockchip ff0d0000.dwmmc: Linked as a consumer to regulator.18
+dwmmc_rockchip ff0d0000.dwmmc: allocated mmc-pwrseq
+mmc_host mmc1: card is non-removable.
+dwmmc_rockchip ff0d0000.dwmmc: dw_mci_set_ios: bus_width=0 timing=0 clock=0 power_mode=1
+dwmmc_rockchip ff0d0000.dwmmc: dw_mci_switch_voltage: signal_voltage=0
+dwmmc_rockchip ff0d0000.dwmmc: dw_mci_switch_voltage: signal_voltage=1
+dwmmc_rockchip ff0d0000.dwmmc: dw_mci_set_ios: bus_width=0 timing=0 clock=400000 power_mode=2
+mmc_host mmc1: Bus speed (slot 0) = 400000Hz (slot req 400000Hz, actual 400000HZ div = 0)
+dwmmc_rockchip ff0f0000.dwmmc: IDMAC supports 32-bit address mode.
+dwmmc_rockchip ff0f0000.dwmmc: Using internal DMA controller.
+dwmmc_rockchip ff0f0000.dwmmc: Version ID is 270a
+dwmmc_rockchip ff0f0000.dwmmc: DW MMC controller at irq 32,32 bit host data width,256 deep fifo
+dwmmc_rockchip ff0f0000.dwmmc: Linked as a consumer to regulator.9
+dwmmc_rockchip ff0f0000.dwmmc: Linked as a consumer to regulator.1
+dwmmc_rockchip ff0f0000.dwmmc: allocated mmc-pwrseq
+mmc_host mmc2: card is non-removable.
+dwmmc_rockchip ff0f0000.dwmmc: dw_mci_set_ios: bus_width=0 timing=0 clock=0 power_mode=1
+dwmmc_rockchip ff0f0000.dwmmc: dw_mci_switch_voltage: signal_voltage=0
+dwmmc_rockchip ff0f0000.dwmmc: dw_mci_switch_voltage: signal_voltage=1
+dwmmc_rockchip ff0f0000.dwmmc: dw_mci_set_ios: bus_width=0 timing=0 clock=400000 power_mode=2
+mmc_host mmc2: Bus speed (slot 0) = 400000Hz (slot req 400000Hz, actual 400000HZ div = 0)
+hidraw: raw HID events driver (C) Jiri Kosina
+usbcore: registered new interface driver usbhid
+usbhid: USB HID core driver
+usb 2-1.3: new high-speed USB device number 5 using ehci-platform
+rockchip-saradc ff100000.saradc: Linked as a consumer to regulator.18
+usbcore: registered new interface driver snd-usb-audio
+jp07-audio sound: jp07_get_dai_fmt: gpio_val=-305849776, fmt=0x00001001
+jp07-audio sound: jp07-codec <-> ff890000.i2s mapping ok
+jp07-codec sound-codec: jp07_codec_set_bias_level: 0 -> 1; mute=1
+usb 2-1.3: New USB device found, idVendor=09e8, idProduct=703b, bcdDevice= 8.28
+usb 2-1.3: New USB device strings: Mfr=3, Product=4, SerialNumber=5
+usb 2-1.3: Product: Card Reader 
+usb 2-1.3: Manufacturer: Akai MPC
+usb 2-1.3: SerialNumber: 000000000014
+usb-storage 2-1.3:1.0: USB Mass Storage device detected
+scsi host1: usb-storage 2-1.3:1.0
+dwmmc_rockchip ff0d0000.dwmmc: dw_mci_command_complete: got RTO
+dwmmc_rockchip ff0f0000.dwmmc: dw_mci_command_complete: got RTO
+dwmmc_rockchip ff0d0000.dwmmc: dw_mci_command_complete: got RTO
+dwmmc_rockchip ff0f0000.dwmmc: dw_mci_command_complete: got RTO
+dwmmc_rockchip ff0f0000.dwmmc: dw_mci_set_ios: bus_width=0 timing=0 clock=400000 power_mode=2
+dwmmc_rockchip ff0d0000.dwmmc: dw_mci_set_ios: bus_width=0 timing=0 clock=400000 power_mode=2
+dwmmc_rockchip ff0c0000.dwmmc: dw_mci_set_ios: bus_width=0 timing=0 clock=400000 power_mode=2
+mmc_host mmc0: Bus speed (slot 0) = 400000Hz (slot req 400000Hz, actual 400000HZ div = 0)
+dwmmc_rockchip ff0d0000.dwmmc: dw_mci_set_ios: bus_width=0 timing=0 clock=400000 power_mode=2
+dwmmc_rockchip ff0d0000.dwmmc: dw_mci_command_complete: got RTO
+dwmmc_rockchip ff0c0000.dwmmc: dw_mci_command_complete: got RTO
+dwmmc_rockchip ff0c0000.dwmmc: dw_mci_command_complete: got RTO
+dwmmc_rockchip ff0c0000.dwmmc: dw_mci_set_ios: bus_width=0 timing=0 clock=400000 power_mode=2
+dwmmc_rockchip ff0c0000.dwmmc: dw_mci_set_ios: bus_width=0 timing=0 clock=400000 power_mode=2
+mmc1: queuing unknown CIS tuple 0x80 (2 bytes)
+mmc1: queuing unknown CIS tuple 0x80 (3 bytes)
+dwmmc_rockchip ff0c0000.dwmmc: dw_mci_command_complete: got RTO
+mmc1: queuing unknown CIS tuple 0x80 (3 bytes)
+dwmmc_rockchip ff0c0000.dwmmc: dw_mci_command_complete: got RTO
+dwmmc_rockchip ff0c0000.dwmmc: dw_mci_command_complete: got RTO
+dwmmc_rockchip ff0c0000.dwmmc: dw_mci_command_complete: got RTO
+dwmmc_rockchip ff0c0000.dwmmc: dw_mci_set_ios: bus_width=0 timing=0 clock=400000 power_mode=2
+mmc1: queuing unknown CIS tuple 0x80 (7 bytes)
+dwmmc_rockchip ff0c0000.dwmmc: dw_mci_set_ios: bus_width=0 timing=0 clock=400000 power_mode=2
+dwmmc_rockchip ff0d0000.dwmmc: dw_mci_set_ios: bus_width=2 timing=0 clock=400000 power_mode=2
+dwmmc_rockchip ff0d0000.dwmmc: dw_mci_set_ios: bus_width=2 timing=3 clock=400000 power_mode=2
+dwmmc_rockchip ff0d0000.dwmmc: dw_mci_set_ios: bus_width=2 timing=3 clock=25000000 power_mode=2
+mmc_host mmc1: Bus speed (slot 0) = 25000000Hz (slot req 25000000Hz, actual 25000000HZ div = 0)
+mmc1: new ultra high speed SDR12 SDIO card at address 0001
+dwmmc_rockchip ff0f0000.dwmmc: dw_mci_set_ios: bus_width=0 timing=0 clock=400000 power_mode=2
+dwmmc_rockchip ff0f0000.dwmmc: dw_mci_command_complete: got RTO
+dwmmc_rockchip ff0f0000.dwmmc: dw_mci_command_complete: got RTO
+dwmmc_rockchip ff0f0000.dwmmc: dw_mci_command_complete: got RTO
+dwmmc_rockchip ff0f0000.dwmmc: dw_mci_command_complete: got RTO
+dwmmc_rockchip ff0f0000.dwmmc: dw_mci_command_complete: got RTO
+dwmmc_rockchip ff0f0000.dwmmc: dw_mci_command_complete: got RTO
+dwmmc_rockchip ff0f0000.dwmmc: dw_mci_command_complete: got RTO
+dwmmc_rockchip ff0f0000.dwmmc: dw_mci_command_complete: got RTO
+dwmmc_rockchip ff0f0000.dwmmc: dw_mci_command_complete: got RTO
+dwmmc_rockchip ff0c0000.dwmmc: dw_mci_set_ios: bus_width=0 timing=0 clock=0 power_mode=2
+dwmmc_rockchip ff0c0000.dwmmc: dw_mci_switch_voltage: signal_voltage=1
+dwmmc_rockchip ff0f0000.dwmmc: dw_mci_set_ios: bus_width=0 timing=0 clock=400000 power_mode=2
+dwmmc_rockchip ff0f0000.dwmmc: dw_mci_set_ios: bus_width=0 timing=0 clock=400000 power_mode=2
+dwmmc_rockchip ff0f0000.dwmmc: dw_mci_set_ios: bus_width=0 timing=0 clock=400000 power_mode=2
+dwmmc_rockchip ff0f0000.dwmmc: dw_mci_set_ios: bus_width=0 timing=0 clock=400000 power_mode=2
+dwmmc_rockchip ff0f0000.dwmmc: dw_mci_set_ios: bus_width=0 timing=0 clock=400000 power_mode=2
+NET: Registered protocol family 10
+Segment Routing with IPv6
+sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+NET: Registered protocol family 17
+Bluetooth: HIDP (Human Interface Emulation) ver 1.2
+Bluetooth: HIDP socket layer initialized
+Registering SWP/SWPB emulation handler
+Loading compiled-in X.509 certificates
+dwmmc_rockchip ff0f0000.dwmmc: dw_mci_set_ios: bus_width=0 timing=1 clock=400000 power_mode=2
+dwmmc_rockchip ff0f0000.dwmmc: dw_mci_set_ios: bus_width=0 timing=1 clock=52000000 power_mode=2
+mmc_host mmc2: Bus speed (slot 0) = 50000000Hz (slot req 52000000Hz, actual 50000000HZ div = 0)
+dwmmc_rockchip ff0f0000.dwmmc: dw_mci_set_ios: bus_width=3 timing=1 clock=52000000 power_mode=2
+dwmmc_rockchip ff0f0000.dwmmc: dw_mci_set_ios: bus_width=3 timing=8 clock=52000000 power_mode=2
+dwmmc_rockchip ff0f0000.dwmmc: dw_mci_switch_voltage: signal_voltage=1
+mmc2: new DDR MMC card at address 0001
+mmcblk2: mmc2:0001 DG4008 7.28 GiB 
+mmcblk2boot0: mmc2:0001 DG4008 partition 1 4.00 MiB
+mmcblk2boot1: mmc2:0001 DG4008 partition 2 4.00 MiB
+mmcblk2rpmb: mmc2:0001 DG4008 partition 3 4.00 MiB, chardev (244:0)
+ mmcblk2: p1 p2 p3 p4 p5 p6 p7 p8
+input: gpio-keys as /devices/platform/gpio-keys/input/input1
+rtc-hym8563 0-0051: setting system clock to 2020-10-15 18:15:48 UTC (1602785748)
+ALSA device list:
+  #0: Akai Pro Akai Pro Force at usb-ff500000.usb-1.5, full speed
+dwmmc_rockchip ff0c0000.dwmmc: dw_mci_set_ios: bus_width=0 timing=0 clock=400000 power_mode=2
+dwmmc_rockchip ff0c0000.dwmmc: dw_mci_set_ios: bus_width=2 timing=0 clock=400000 power_mode=2
+dwmmc_rockchip ff0c0000.dwmmc: dw_mci_set_ios: bus_width=2 timing=3 clock=400000 power_mode=2
+dwmmc_rockchip ff0c0000.dwmmc: dw_mci_set_ios: bus_width=2 timing=3 clock=25000000 power_mode=2
+mmc_host mmc0: Bus speed (slot 0) = 25000000Hz (slot req 25000000Hz, actual 25000000HZ div = 0)
+mmc0: new ultra high speed SDR12 SDXC card at address 0007
+mmcblk0: mmc0:0007 SD64G 59.0 GiB 
+ mmcblk0: p1
+  #1: ADA2
+ttyS2 - failed to request DMA
+EXT4-fs (mmcblk2p6): mounted filesystem with ordered data mode. Opts: (null)
+VFS: Mounted root (ext4 filesystem) readonly on device 179:6.
+devtmpfs: mounted
+Freeing unused kernel memory: 1024K
+Run /sbin/init as init process
+systemd[1]: systemd 244 running in system mode. (-PAM -AUDIT -SELINUX -IMA -APPARMOR -SMACK +SYSVINIT +UTMP -LIBCRYPTSETUP -GCRYPT -GNUTLS -ACL +XZ -LZ4 -SECCOMP +BLKID -ELFUTILS +KMOD -IDN2 -IDN -PCRE2 default-hierarchy=hybrid)
+systemd[1]: Detected architecture arm.
+
+Welcome to Buildroot 2020.02.2!
+
+systemd[1]: Set hostname to <buildroot>.
+random: systemd: uninitialized urandom read (16 bytes read)
+systemd[1]: Initializing machine ID from random generator.
+systemd[1]: Installed transient /etc/machine-id file.
+systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket  /run/dbus/system_bus_socket; please update the unit file accordingly.
+scsi 1:0:0:0: Direct-Access     Akai MPC SD  Card Reader  0828 PQ: 0 ANSI: 6
+random: systemd: uninitialized urandom read (16 bytes read)
+systemd[1]: system-getty.slice: unit configures an IP firewall, but the local system does not support BPF/cgroup firewalling.
+systemd[1]: (This warning is only shown for the first unit using IP firewalling.)
+systemd[1]: Created slice system-getty.slice.
+[  OK  ] Created slice system-getty.slice.
+random: systemd: uninitialized urandom read (16 bytes read)
+systemd[1]: Created slice system-serial\x2dgetty.slice.
+[  OK  ] Created slice system-serial\x2dgetty.slice.
+systemd[1]: Started Dispatch Password Requests to Console Directory Watch.
+[  OK  ] Started Dispatch Password ts to Console Directory Watch.
+systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+[  OK  ] Started Forward Password Ruests to Wall Directory Watch.
+systemd[1]: Reached target Paths.
+[  OK  ] Reached target Paths.
+systemd[1]: Reached target Remote File Systems.
+[  OK  ] Reached target Remote File Systems.
+systemd[1]: Reached target Slices.
+[  OK  ] Reached target Slices.
+systemd[1]: Reached target Swap.
+[  OK  ] Reached target Swap.
+systemd[1]: Reached target System Time Set.
+[  OK  ] Reached target System Time Set.
+systemd[1]: Listening on Device-mapper event daemon FIFOs.
+[  OK  ] Listening on Device-mapper event daemon FIFOs.
+systemd[1]: Listening on initctl Compatibility Named Pipe.
+[  OK  ] Listening on initctl Compatibility Named Pipe.
+systemd[1]: Condition check resulted in Journal Audit Socket being skipped.
+systemd[1]: Listening on Journal Socket (/dev/log).
+[  OK  ] Listening on Journal Socket (/dev/log).
+systemd[1]: Listening on Journal Socket.
+[  OK  ] Listening on Journal Socket.
+systemd[1]: Listening on udev Control Socket.
+[  OK  ] Listening on udev Control Socket.
+systemd[1]: Listening on udev Kernel Socket.
+[  OK  ] Listening on udev Kernel Socket.
+systemd[1]: Condition check resulted in Huge Pages File System being skipped.
+systemd[1]: Condition check resulted in POSIX Message Queue File System being skipped.
+sd 1:0:0:0: [sdb] 118374400 512-byte logical blocks: (60.6 GB/56.4 GiB)
+sd 1:0:0:0: [sdb] Write Protect is off
+sd 1:0:0:0: [sdb] Write cache: disabled, read cache: enabled, doesn't support DPO or FUA
+ sdb: sdb1
+sd 1:0:0:0: [sdb] Attached SCSI removable disk
+systemd[1]: Mounting Mount /media...
+         Mounting Mount /media...
+systemd[1]: Mounting Kernel Debug File System...
+         Mounting Kernel Debug File System...
+systemd[1]: Mounting Temporary Directory (/tmp)...
+         Mounting Temporary Directory (/tmp)...
+systemd[1]: Starting Mali GPU driver setup for AZ01...
+         Starting Mali GPU driver setup for AZ01...
+systemd[1]: Starting Availability of block devices...
+         Starting Availability of block devices...
+systemd[1]: Condition check resulted in Create list of static device nodes for the current kernel being skipped.
+systemd[1]: Starting Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling...
+         Starting Monitoring of LVMmeventd or progress polling...
+systemd[1]: Starting File System Check on Root Device...
+         Starting File System Check on Root Device...
+systemd[1]: Starting Journal Service...
+         Starting Journal Service...
+systemd[1]: Condition check resulted in Load Kernel Modules being skipped.
+systemd[1]: Mounting FUSE Control File System...
+         Mounting FUSE Control File System...
+systemd[1]: Mounting Kernel Configuration File System...
+         Mounting Kernel Configuration File System...
+systemd[1]: Starting Apply Kernel Variables...
+         Starting Apply Kernel Variables...
+systemd[1]: Starting Wait Until Kernel Time Synchronized...
+         Starting Wait Until Kernel Time Synchronized...
+         Starting Create Static Device Nodes in /dev...
+         Starting udev Coldplug all Devices...
+[  OK  ] Mounted Mount /media.
+[  OK  ] Mounted Kernel Debug File System.
+[  OK  ] Mounted Temporary Directory (/tmp).
+[  OK  ] Started Mali GPU driver setup for AZ01.
+[  OK  ] Started Availability of block devices.
+[  OK  ] Started File System Check on Root Device.
+[  OK  ] Mounted FUSE Control File System.
+[  OK  ] Mounted Kernel Configuration File System.
+[  OK  ] Started Apply Kernel Variables.
+[  OK  ] Started Create Static Device Nodes in /dev.
+         Starting Remount Root and Kernel File Systems...
+[  OK  ] Started Remount Root and Kernel File Systems.
+         Starting udev Kernel Device Manager...
+[  OK  ] Started udev Kernel Device Manager.
+[  OK  ] Started Monitoring of LVM2 dmeventd or progress polling.
+[  OK  ] Reached target Local File Systems (Pre).
+[  OK  ] Started Journal Service.
+[  OK  ] Started udev Coldplug all Devices.
+[  OK  ] Found device /dev/ttyS2.
+[  OK  ] Found device /dev/disk/by-d-ad59-0849-833a-9bf00af5b60e.
+[  OK  ] Found device /dev/disk/by-7-1b5e-ba46-9a61-ab2c2b6a7fb5.
+[  OK  ] Found device /dev/disk/by-platform-ff0c0000.dwmmc-part1.
+[  OK  ] Reached target Sound Card.
+         Mounting Mount /media/acvs-synths...
+         Mounting /media/az01-internal-sd...
+         Starting Create /media/az0nal filesystem if necessary...
+[  OK  ] Mounted Mount /media/acvs-synths.
+[  OK  ] Started Create /media/az01ernal filesystem if necessary.
+         Mounting Mount /media/az01-internal...
+[  OK  ] Mounted Mount /media/az01-internal.
+         Starting Setup directories for overlayfs mounts...
+[  OK  ] Started Setup directories for overlayfs mounts.
+         Mounting Writable /etc via OverlayFS...
+         Mounting Writable /var via OverlayFS...
+[  OK  ] Mounted Writable /etc via OverlayFS.
+[  OK  ] Mounted /media/az01-internal-sd.
+[  OK  ] Mounted Writable /var via OverlayFS.
+[  OK  ] Reached target Local File Systems.
+         Starting Fix transient machine-id after mounting /etc...
+         Starting Flush Journal to Persistent Storage...
+         Starting Commit a transient machine-id on disk...
+[  OK  ] Started Fix transient machine-id after mounting /etc.
+[  OK  ] Started Flush Journal to Persistent Storage.
+         Starting Create Volatile Files and Directories...
+[  OK  ] Started Commit a transient machine-id on disk.
+[  OK  ] Started Create Volatile Files and Directories.
+         Starting Update UTMP about System Boot/Shutdown...
+[  OK  ] Started Update UTMP about System Boot/Shutdown.
+[  OK  ] Reached target System Initialization.
+[  OK  ] Started Daily Cleanup of Temporary Directories.
+[  OK  ] Listening on D-Bus System Message Bus Socket.
+[  OK  ] Reached target Sockets.
+[  OK  ] Reached target Basic System.
+         Starting Remove all but the most recent core dump...
+[  OK  ] Started AZ01 power button emergency shutdown service.
+         Starting Unsupported device detection service...
+[  OK  ] Started AZ01 JMicron USB-SATA bridge configuration fixer.
+         Starting Bluetooth service...
+[  OK  ] Started D-Bus System Message Bus.
+[  OK  ] Started Getty on tty1.
+         Starting Hostname setup for MPC...
+[  OK  ] Started Serial Getty on ttyS2.
+[  OK  ] Reached target Login Prompts.
+         Starting Firmware update for Ilitek touchscreens...
+         Starting WPA supplicant...
+[  OK  ] Started Remove all but the most recent core dump.
+[  OK  ] Started Firmware update for Ilitek touchscreens.
+[  OK  ] Started Unsupported device detection service.
+         Starting Hostname Service...
+[  OK  ] Started WPA supplicant.
+[  OK  ] Started Bluetooth service.
+[  OK  ] Reached target Bluetooth.
+[  OK  ] Started Hostname Service.
+[  OK  ] Started Hostname setup for MPC.
+[  OK  ] Reached target Network (Pre).
+         Starting Connection service...
+[  OK  ] Started Connection service.
+[  OK  ] Reached target Network.
+[  OK  ] Started AZ01 network MIDI service.
+[  OK  ] Started AZ01 script runner service.
+[  OK  ] Started InMusic MPC Application.
+[  OK  ] Reached target Multi-User System.
+         Starting Update UTMP about System Runlevel Changes...
+[  OK  ] Started Update UTMP about System Runlevel Changes.
+[  OK  ] Stopped AZ01 network MIDI service.
+[  OK  ] Started AZ01 network MIDI service.
+         Starting OpenSSH server daemon...
+[  OK  ] Started OpenSSH server daemon.
+
+Welcome to Buildroot
+force login: root
+Password: 
+# lsusb
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 002 Device 004: ID 09e8:0040 AKAI  Professional M.I. Corp. 
+Bus 002 Device 006: ID 152d:0578 JMicron Technology Corp. / JMicron USA Technology Corp. JMS567 SATA 6Gb/s bridge
+Bus 002 Device 005: ID 09e8:703b AKAI  Professional M.I. Corp. 
+Bus 002 Device 002: ID 09e8:5040 AKAI  Professional M.I. Corp. Force Hub
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+# shutdown
+Cannot schedule shutdown without logind support, proceeding with immediate shutdown.
+[  OK  ] Stopped target Bluetooth.
+[  OK  ] Stopped target Multi-User System.
+[  OK  ] Stopped target Login Prompts.
+[  OK  ] Stopped target Remote File Systems.
+[  OK  ] Stopped target Sound Card.
+[  OK  ] Stopped target topping Serial Getty on ttyS2...
+         Stopping OpenSSH server daemon...
+[  OK  ] Stopped Wait Until Kernel Time Synchronized.
+         Stopping Disk Manager (legacy version)...
+[  OK  ] Stopped AZ01 power button emergency shutdown service.
+[  OK  ] Stopped Unsupported device detection service.
+[  OK  ] Stopped Bluetooth service.
+[  OK  ] Stopped Getty on tty1.
+[  OK  ] Stopped Serial Getty on ttyS2.
+[  OK  ] Stopped OpenSSH server daemon.
+[  OK  ] Stopped Disk Manager (legacy version).
+[FAILED] Failed unmounting Mount /media/acvs-synths.
+[  OK  ] Stopped Availability of block devices.
+[  OK  ] Removed slice system-getty.slice.
+[  OK  ] Removed slice system-serial\x2dgetty.slice.
+[  OK  ] Stopped InMusic MPC Application.
+         Stopping AZ01 network MIDI service...
+         Stopping AZ01 script runner service...
+         Stopping AZ01 JMicron USB- bridge configuration fixer...
+[  OK  ] Stopped Firmware update for Ilitek touchscreens.
+[  OK  ] Stopped AZ01 JMicron USB-SATA bridge configuration fixer.
+[  OK  ] Stopped AZ01 script runner service.
+[  OK  ] Stopped AZ01 network MIDI service.
+[  OK  ] Stopped target Network.
+         Stopping Connection service...
+         Stopping WPA supplicant...
+[  OK  ] Stopped WPA supplicant.
+[  OK  ] Stopped Connection service.
+[  OK  ] Stopped target Network (Pre).
+         Stopping D-Bus System Message Bus...
+[  OK  ] Stopped Hostname setup for MPC.
+[  OK  ] Stopped D-Bus System Message Bus.
+[  OK  ] Stopped target Basic System.
+[  OK  ] Stopped target Paths.
+[  OK  ] Stopped Dispatch Password ts to Console Directory Watch.
+[  OK  ] Stopped Forward Password Ruests to Wall Directory Watch.
+[  OK  ] Stopped target Slices.
+[  OK  ] Stopped target Sockets.
+[  OK  ] Closed D-Bus System Message Bus Socket.
+[  OK  ] Stopped target System Initialization.
+[  OK  ] Stopped Mali GPU driver setup for AZ01.
+[  OK  ] Stopped Commit a transient machine-id on disk.
+[  OK  ] Stopped Apply Kernel Variables.
+         Stopping Update UTMP about System Boot/Shutdown...
+[  OK  ] Stopped Update UTMP about System Boot/Shutdown.
+[  OK  ] Stopped Create Volatile Files and Directories.
+[  OK  ] Stopped target Local File Systems.
+         Unmounting /etc/machine-id...
+         Unmounting /media/SD Card...
+         Unmounting /media/SSD...
+         Unmounting /media/az01-internal-sd...
+[  OK  ] Stopped Fix transient machine-id after mounting /etc.
+         Stopping Flush Journal to Persistent Storage...
+[FAILED] Failed unmounting /etc/machine-id.
+[  OK  ] Unmounted /media/SD Card.
+[  OK  ] Unmounted /media/SSD.
+[  OK  ] Unmounted /media/az01-internal-sd.
+[  OK  ] Stopped Flush Journal to Persistent Storage.
+[  OK  ] Stopped target Local File Systems (Pre).
+         Unmounting Writable /etc via OverlayFS...
+         Unmounting Writable /var via OverlayFS...
+         Stopping Monitoring of LVMmeventd or progress polling...
+[  OK  ] Stopped Remount Root and Kernel File Systems.
+[  OK  ] Stopped File System Check on Root Device.
+[  OK  ] Stopped Create Static Device Nodes in /dev.
+[  OK  ] Unmounted Writable /etc via OverlayFS.
+[  OK  ] Unmounted Writable /var via OverlayFS.
+[  OK  ] Stopped Setup directories for overlayfs mounts.
+         Unmounting Mount /media/az01-internal...
+         Unmounting Temporary Directory (/tmp)...
+[  OK  ] Unmounted Mount /media/az01-internal.
+         Unmounting Mount /media...
+[  OK  ] Stopped Create /media/az01ernal filesystem if necessary.
+[  OK  ] Unmounted Temporary Directory (/tmp).
+[  OK  ] Stopped Monitoring of LVM2 dmeventd or progress polling.
+[FAILED] Failed unmounting Mount /media.
+[  OK  ] Stopped target Swap.
+[  OK  ] Reached target Shutdown.
+[  OK  ] Reached target Unmount All Filesystems.
+[  OK  ] Reached target Final Step.
+[  OK  ] Started Power-Off.
+[  OK  ] Reached target Power-Off.
+dwmmc_rockchip ff0c0000.dwmmc: dw_mci_command_complete: got RTO
+dwmmc_rockchip ff0c0000.dwmmc: dw_mci_command_complete: got RTO
+dwmmc_rockchip ff0c0000.dwmmc: dw_mci_command_complete: got RTO
+dwmmc_rockchip ff0c0000.dwmmc: dw_mci_command_complete: got RTO
+dwmmc_rockchip ff0c0000.dwmmc: dw_mci_command_complete: got RTO
+dwmmc_rockchip ff0c0000.dwmmc: dw_mci_command_complete: got RTO
+dwmmc_rockchip ff0c0000.dwmmc: dw_mci_command_complete: got RTO
+dwmmc_rockchip ff0c0000.dwmmc: dw_mci_command_complete: got RTO
+dwmmc_rockchip ff0c0000.dwmmc: dw_mci_command_complete: got RTO
+dwmmc_rockchip ff0c0000.dwmmc: dw_mci_command_complete: got RTO
+reboot: Power down

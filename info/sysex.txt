@@ -1,0 +1,107 @@
+Encoder Right:
+b0 64 01-03 - Values 1 to 3 depend on the rotation speed
+Encoder Left:
+b0 64 7f-7d - Values 7f to 7d (-1 to -3) depend on the rotation speed
+Encoder Press:
+90 6f 7f
+Encoder Release:
+90 6f 00
+
+Slider:
+b0 20 00-7f
+
+Pot Touch:
+   Pot#_
+90 53-5a 7f
+Pot Release:
+   Pot#_
+80 53-5a 00
+Pot Value:
+   Pot#_
+b0 10-17 00-7f
+
+All lights max:
+b1 7f 7f
+All lights min:
+b1 7f 00
+All lights off:
+f0 47 00 40 62 00 01 02 f7
+
+Buttons / Leds:
+b0 00 00-7f - Navigate
+b0 01 00-7f - Knobs
+b0 02 00-7f - Menu
+b0 03 00-7f - Matrix
+b0 04 00-7f - Note
+b0 05 00-7f - Master
+b0 09 00-7f - Clip
+b0 0b 00-7f - Mixer
+b0 23 00-7f - Load
+b0 24 00-7f - Save
+b0 25 00-7f - Edit
+b0 26 00-7f - Delete
+b0 31 00-7f - Shift
+b0 34 00-7f - Select
+b0 35 00-7f - Tap Tempo
+b0 36 00-7f - +
+b0 37 00-7f - -
+b0 38 00-7f - Launch 1
+b0 39 00-7f - Launch 2
+b0 3a 00-7f - Launch 3
+b0 3b 00-7f - Launch 4
+b0 3c 00-7f - Launch 5
+b0 3d 00-7f - Launch 6
+b0 3e 00-7f - Launch 7
+b0 3f 00-7f - Launch 8
+b0 43 00-7f - Undo
+b0 49 00-7f - Rec
+b0 51 00-7f - Stop
+b0 52 00-7f - Play
+b0 5b 00-7f - Mute
+b0 5c 00-7f - Solo
+b0 5d 00-7f - Rec Arm
+b0 5e 00-7f - Clip Stop
+b0 5f 00-7f - Stop All
+b0 70 00-7f - ^
+b0 71 00-7f - v
+b0 72 00-7f - <
+b0 73 00-7f - >
+b0 74 00-7f - Launch
+b0 75 00-7f - Step Seq
+b0 76 00-7f - Arp
+b0 7a 00-7f - Copy
+b0 7b 00-7f - Assign A
+b0 7c 00-7f - Assign B
+
+Pad On:
+99 36-75 00-7f
+Pad Off:
+89 36-75 00
+Pad Pressure:
+a9 36-75 00-7f
+
+Pad LEDs:
+                     Pad#_ R____ G____ B____
+f0 47 00 40 65 00 04 00-4f 00-7f 00-7f 00-7f f7
+Pads start counting from the top left
+
+Column Pads:
+90 60-67 00/7f
+Mute Pads:
+90 29-30 00/7f
+
+Oled All White:
+               len__ disp_ sb eb sc ec data
+f0 47 00 40 0a 00 07 00-07 00 03 00 7f 0f 0f f7
+
+Oled All Black:
+               len__ disp_ sb eb sc ec data
+f0 47 00 40 0a 00 07 00-07 00 03 00 7f 00 00 f7
+
+Oled Data (short mode):
+               len__ disp_ sb eb sc ec data
+f0 47 7f 40 0b 00 73 01-07 00 01 27 56 .... f7
+
+Oled Data (Long mode):
+               len__ disp_ sb eb sc ec data
+f0 47 7f 40 0c 00 73 01-07 00 01 27 56 .... f7
