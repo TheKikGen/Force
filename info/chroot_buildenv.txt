@@ -1,0 +1,184 @@
+<overlay> = /media/az01-internal/system/usr/overlay/
+<chroot> = /media/SSD/Builds/jessie/
+
+0. Build the chroot (on some Ubuntu/Debian machine)
+	debootstrap --arch=armhf jessie jessie
+	(download from https://mega.nz/file/EKxWFJhI#9AbY3NF7uxvyYDKk6zASDs08vNrv8SJqHXRmYlvRFyI )
+
+1. Install jessie chroot on the Force
+	Must be extracted on a ext4 filesystem
+	(reboot if were using a different chroot)
+	cd to the chroot folder
+	run ./mount.sh to prepare the chroot (only the first time after a reboot)
+	run ./chroot.sh to enter the chroot
+
+1a. Upgrade jessie to stretch
+	(https://www.datenreise.de/en/raspberry-pi-raspbian-update-update-jessie-to-stretch/ )
+	dpkg --audit
+	dpkg --get-selections | grep hold
+	apt-get update
+	apt-get upgrade
+	apt-get dist-upgrade
+	sed -i /deb/s/jessie/stretch/g /etc/apt/sources.list
+	apt-get update
+	apt-get upgrade
+	apt-get dist-upgrade
+	apt-get autoremove
+	apt-get autoclean
+
+2. Install packages using apt:
+	apt -y install build-essential
+	apt -y install autoconf
+	apt -y install libtool
+	apt -y install shtool
+	apt -y install cmake
+	apt -y install gawk
+	apt -y install flex
+	apt -y install bison
+	apt -y install pkg-config
+	apt -y install git
+	apt -y install unzip
+	apt -y install vim
+	apt -y install libfreetype6-dev
+	apt -y install libreadline-dev
+	apt -y install libmpg123-dev
+	apt -y install libtiff-dev
+	apt -y install libasound2-dev
+	apt -y install libdrm-dev
+	apt -y install libgbm-dev
+	apt -y install libegl1-mesa-dev
+	apt -y install libgles2-mesa-dev
+	apt -y install libudev-dev
+	apt -y install libinput-dev
+	apt -y install libffi-dev
+	apt -y install python3
+	apt -y install python3-pip
+
+	2a. Install meson
+	pip3 install meson
+	
+	2b. Copy extra libraries to (outside the chroot)
+	cd <chroot>
+	cp -va lib/arm-linux-gnueabihf/libreadline.so.6* /usr/lib/
+	cp -va lib/arm-linux-gnueabihf/libtinfo.so.5* /usr/lib/
+	cp -va usr/lib/arm-linux-gnueabihf/libpng*.so* /usr/lib/
+
+	2c. Link /usr/local/lib (outside the chroot)
+	cd <overlay>
+	mkdir local/
+	cd <overlay>local/
+	ln -s /usr/lib lib
+
+	2d. Modify /root/.bashrc for convenience
+
+3. Build SDL2 (https://www.libsdl.org/download-2.0.php )
+	cd SDL2-2.0.12 (or SDL)
+	(apply kmsdrm rotation patch)
+	./configure --disable-video-x11 --disable-video-vulkan --enable-video-kmsdrm
+	add -DROTATE -std=c99 to Makefile CFLAGS
+	add -lgbm to Makefile EXTRA_LDFLAGS
+	make -j4
+	make install
+
+4. Build SDL2_image (https://www.libsdl.org/projects/SDL_image/ )
+	cd SDL2_image-2.0.5
+	./configure
+	make -j4
+	make install
+
+5. Build SDL2_ttf (https://www.libsdl.org/projects/SDL_ttf/ )
+	cd SDL2_ttf-2.0.15
+	./configure
+	make -j4
+	make install
+
+6. Build SDL2_mixer (https://www.libsdl.org/projects/SDL_mixer/ )
+	cd SDL2_mixer-2.0.4
+	./configure
+	make -j4
+	make install
+
+7. Build SDL_net (https://www.libsdl.org/projects/SDL_net/ )
+	cd SDL2_net-2.0.1
+	./configure
+	make -j4
+	make install
+
+8. Build LuaJit (https://luajit.org/download/ )
+	cd LuaJit/src
+	make
+	cd ..
+	make install
+
+9. Build Lua (https://www.lua.org/source/5.3/ ) - Optional
+	cd lua-5.3.6
+	make linux
+	make install
+	(now outside the chroot)
+	cp <chroot>lua-5.3.6/src/lua <overlay>usr/bin/
+	cp <chroot>lua-5.3.6/src/luac <overlay>usr/bin/
+
+10. Build LuaSDL2 (https://github.com/Tangent128/luasdl2 ) - Optional
+	cd luasdl2
+	mkdir _build_
+	cd _build_
+	cmake .. -DWITH_LUAVER=53 -DLUA53_INCLUDE_DIR=/root/lua-5.3.6/src -DLUA53_LIBRARIES=/root/lua-5.3.6/src
+	make -j4
+	make install
+
+11. Install libraries onto the /usr overlay
+	(from outside the chroot)
+	cd <chroot>
+	cp -va usr/local/lib/*so.* /usr/lib/
+	cp -va usr/local/lib/lua /usr/lib/
+	cp -va usr/local/bin/sdl2-config /usr/bin/
+
+---------------------- ONLY IF RGA IS AVAILABLE
+librga:
+	(https://github.com/rockchip-linux/linux-rga )
+	Change meson target from shared_library to both_libraries
+	meson _build_
+	meson compile
+
+SDL2 with rga rotation:
+	(https://github.com/AreaScout/SDL )
+	./configure --disable-video-x11 --disable-video-vulkan --disable-video-wayland --disable-video-rpi --disable-video-directfb --enable-video-kmsdrm | tee configure.log
+	add -lrga to Makefile EXTRA_LDFLAGS
+	make -j4
+----------------------
+
+Scripts to use with the chroot environment, must be installed on its root.
+
+Mount the chroot:
+------------------------------
+#!/bin/sh
+
+if test -f "/usr/bin/stat"; then
+        echo "We are chrooted!"
+else
+        if test -f "/tmp/chroot_mounted"; then
+                echo "chroot already mounted"
+        else
+                echo "mounting /dev /proc /sys"
+                mount -t proc /proc proc/
+                mount --rbind /sys sys/
+                mount --rbind /dev dev/
+                touch /tmp/chroot_mounted
+        fi
+fi
+------------------------------
+
+Start the chroot:
+------------------------------
+#!/bin/sh
+
+if test -f "/usr/bin/stat"; then
+        echo "We are chrooted!"
+else
+        if test -f "proc/1/cmdline"; then
+                chroot . /bin/bash --login
+        else
+                echo "chroot not mounted"
+        fi
+fi
+------------------------------

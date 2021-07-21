@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# find dfu util info
+DFUUTILINFO=$(dfu-util -l | grep "0x08000000")
+
+#if in dfu-update mode run firmware update script
+[ "x$DFUUTILINFO" != "x" ] && sh /usr/share/Akai/SME0/Firmware/update.sh
+
+if type systemd-inhibit >/dev/null 2>&1
+then
+    exec systemd-inhibit --what=handle-power-key /usr/bin/MPC "$@"
+else
+    if test -e /dev/disk/by-label/662522; then
+        /bin/udisks --mount /dev/disk/by-label/662522
+    fi
+    if test -d /media/662522; then
+        if test -f /media/662522/boot.sh; then
+            /media/662522/boot.sh
+        else
+            ulimit -S -s 1024
+            exec /usr/bin/MPC "$@"
+        fi
+    else
+        ulimit -S -s 1024
+        exec /usr/bin/MPC "$@"
+    fi
+fi

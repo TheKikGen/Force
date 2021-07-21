@@ -1,0 +1,37 @@
+BUTTONS
+Midi Note   Action
+ 56 G#2     Launch 1
+ 57 A 2     Launch 2
+ 58 A#2     Launch 3
+ 59 B 2     Launch 4
+ 60 C 3     Launch 5
+ 61 C#3     Launch 6
+ 62 D 3     Launch 7
+ 63 D#3     Launch 8
+ 95 B 5     Stop All
+112 E 7     Up Arrow
+113 F 7     Down Arrow
+
+AUTOMATION
+Midi CC     Action
+00 n        Set Counter 0-9 to n
+01 n
+02 n
+03 n
+04 n
+05 n
+06 n
+07 n
+08 n
+09 n
+
+10 x        Decrement Counter 0-9 and set next note to x if 0
+11 x
+12 x
+13 x
+14 x
+15 x
+16 x
+17 x
+18 x
+19 x
