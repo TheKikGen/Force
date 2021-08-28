@@ -3,7 +3,6 @@
 
 0. Build the chroot (on some Ubuntu/Debian machine)
 	debootstrap --arch=armhf jessie jessie
-	(download from https://mega.nz/file/EKxWFJhI#9AbY3NF7uxvyYDKk6zASDs08vNrv8SJqHXRmYlvRFyI )
 
 1. Install jessie chroot on the Force
 	Must be extracted on a ext4 filesystem
