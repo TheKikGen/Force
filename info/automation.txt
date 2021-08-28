@@ -14,24 +14,24 @@ Midi Note   Action
 
 AUTOMATION
 Midi CC     Action
-00 n        Set Counter 0-9 to n
-01 n
-02 n
-03 n
-04 n
-05 n
-06 n
-07 n
-08 n
-09 n
+10 n        Set Counter 0-9 to n
+11 n
+12 n
+13 n
+14 n
+15 n
+16 n
+17 n
+18 n
+19 n
 
-10 x        Decrement Counter 0-9 and set next note to x if 0
-11 x
-12 x
-13 x
-14 x
-15 x
-16 x
-17 x
-18 x
-19 x
+20 x        Decrement Counter 0-9 and set next note to x if 0
+21 x
+22 x
+23 x
+24 x
+25 x
+26 x
+27 x
+28 x
+29 x
