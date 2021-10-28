@@ -1,57 +1,59 @@
                     |C D EF G A B|
                     |1 2 34 5 6 7|
                     |123456789ABC|
-Chromatic           |************|  HHHHHHHHHHHH
-Major               |* * ** * * *|  WWHWWWH
-Natural Minor       |* ** * ** * |  WHWWHWW
-Harmonic Minor      |* ** * **  *|  WHWWH3W
-Melodic Minor       |* ** * * * *|  WHWWWWH
-Major Blues         |* ***  * *  |  WHH3W3
-Minor Blues         |*  * ***  * |  3WHH3W
-Major Pentatonic    |* * *  * *  |  WW3W3
-Minor Pentatonic    |*  * * *  * |  3WW3W
+Chromatic           |************|  111111111111
+Major               |* * ** * * *|  2212221
+Natural Minor       |* ** * ** * |  2122122
+Harmonic Minor      |* ** * **  *|  2122131
+Melodic Minor       |* ** * * * *|  2122221
+Major Blues         |* ***  * *  |  211323
+Minor Blues         |*  * ***  * |  321132
+Major Pentatonic    |* * *  * *  |  22323
+Minor Pentatonic    |*  * * *  * |  32232
                     |C D EF G A B|
-Ionian              |* * ** * * *|  WWHWWWH
-Dorian              |* ** * * ** |  WHWWWHW
-Phrygian            |** * * ** * |  HWWWHWW
-Lydian              |* * * ** * *|  WWWHWWH
-Mixolydian          |* * ** * ** |  WWHWWHW
-Aeolian             |* ** * ** * |  WHWWHWW
-Locrian             |** * ** * * |  HWWHWWW
+Ionian              |* * ** * * *|  2212221
+Dorian              |* ** * * ** |  2122212
+Phrygian            |** * * ** * |  1222122
+Lydian              |* * * ** * *|  2221221
+Mixolydian          |* * ** * ** |  2212212
+Aeolian             |* ** * ** * |  2122122
+Locrian             |** * ** * * |  1221222
                     |C D EF G A B|
-Altered Pentatonic  |**   * * *  |  H4WW3
-Altered Ionian #5   |* * **  ** *|  WWH3HWH
-Altered Dorian b2   |** * * * ** |  HWWWWHW
-Altered Dorian b5   |* ** **  ** |  WHWH3HW
-Altered Phrygian b4 |**  ** * ** |  H3HWWHW
-Altered Lydian #2   |*  ** ** * *|  3HWHWWH
-Altered Lydian #5   |* * * * ** *|  WWWWHWH
-Altered Lydian b7   |* * * ** ** |  WWWHWHW
-Altered Aeolian b1  |* * ** **  *|  WWHWH3H
-Altered Locrian     |** ** * * * |  HWHWWWW
+Altered Pentatonic  |**   * * *  |  14223
+Altered Ionian #5   |* * **  ** *|  2213121
+Altered Dorian b2   |** * * * ** |  1222212
+Altered Dorian b5   |* ** **  ** |  2121312
+Altered Phrygian b4 |**  ** * ** |  1312212
+Altered Lydian #2   |*  ** ** * *|  3121221
+Altered Lydian #5   |* * * * ** *|  2222121
+Altered Lydian b7   |* * * ** ** |  2221212
+Altered Aeolian b1  |* * ** **  *|  2212131
+Altered Locrian     |** ** * * * |  1212222
                     |C D EF G A B|
-Major Bebop         |* * ** *** *|  WWHWHHWH
-Minor Bebop         |* **** * ** |  WHHHWWHW
-Nine Tone           |* *** **** *|  WHHWHHHWH
-Algerian            |* ** ****  *|  WHWHHH3H
-Arabic              |* * *** * * |  WWHHWWW
-Augmented           |*  **  **  *|  3H3H3H
-Balinese            |** *   **   |  HW4H4
-Chinese             |*   * **   *|  4WH4H
-Diminished          |* ** ** ** *|  WHWHWHWH
-Dominant Diminished |** ** ** ** |  HWHWHWHW
-Egyptian            |* *  * *  * |  W3W3W
-Eight Tone Spanish  |** **** * * |  HWHHHWWW
-Enigmatic           |**  * * * **|  H3WWWHH
-Hindu               |* * ** ** * |  WWHWHWW
-Hirajoshi           |**   **   * |  H4H4W
-Hungarian           |* **  ***  *|  WH3HH3H
-Japanese            |**   * *  * |  H4W3W
-Neapolitan          |** * * **  *|  HWWWH3H
-Oriental            |**  ***  ** |  H3HH3HW
-Prometheus          |* * * *  ** |  WWW3HW
-Whole Tone          |* * * * * * |  WWWWWW
-Romanian Minor      |* **  ** ** |  WH3HWHW
-Spanish Gypsy       |**  ** ** * |  H3HWHWW
-Turkish             |**  ** **  *|  H3HWH3H
-Yo                  |* *  * * *  |  W3WW3
+Major Bebop         |* * ** *** *|  22121121
+Minor Bebop         |* **** * ** |  21112212
+Nine Tone           |* *** **** *|  211211121
+Algerian            |* ** ****  *|  21211131
+Arabic              |* * *** * * |  2211222
+Augmented           |*  **  **  *|  313131
+Balinese            |** *   **   |  12414
+Chinese             |*   * **   *|  42141
+Diminished          |* ** ** ** *|  21212121
+Dominant Diminished |** ** ** ** |  12121212
+Egyptian            |* *  * *  * |  23232
+Eight Tone Spanish  |** **** * * |  12111222
+Enigmatic           |**  * * * **|  1322211
+Hindu               |* * ** ** * |  2212122
+Hirajoshi           |**   **   * |  14142
+Hungarian           |* **  ***  *|  2131131
+Japanese            |**   * *  * |  14232
+Neapolitan          |** * * **  *|  1222131
+Oriental            |**  ***  ** |  1311312
+Prometheus          |* * * *  ** |  222312
+Whole Tone          |* * * * * * |  222222
+Romanian Minor      |* **  ** ** |  2131212
+Spanish Gypsy       |**  ** ** * |  1312122
+Turkish             |**  ** **  *|  1312131
+Yo                  |* *  * * *  |  23223
+                    |C D EF G A B|
+Holt				|*  * * * * *|	322221
