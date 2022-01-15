@@ -9,4 +9,4 @@ Mod files:<br>
 
 To use the "follow actions" functionality it is necessary to use the SD files from this repository.
 
-WARNING: The files here won't necessarily get updated as fast what's on the Facebook group.
+WARNING: The files here won't necessarily get updated as fast as what's on the Facebook group.
